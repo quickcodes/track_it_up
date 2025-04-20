@@ -45,8 +45,7 @@ class DeviceInfoModel {
 
   @override
   String toString() {
-    return '''
-Device Model: $deviceModel
+    return '''Device Model: $deviceModel
 OS Version: $osVersion
 Screen Resolution: $screenResolution
 Unique ID: $deviceUniqueID
@@ -61,8 +60,7 @@ Location:
   Speed: $speed
   Speed Accuracy: $speedAccuracy
   Timestamp: $timestamp
-Nearby Bluetooth Devices: $nearbyBluetoothDevices
-''';
+Nearby Bluetooth Devices: $nearbyBluetoothDevices''';
   }
 }
 

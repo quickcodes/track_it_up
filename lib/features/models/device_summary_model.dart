@@ -76,10 +76,12 @@ DeviceSummary summarizeDeviceInfoData(List<DeviceInfoModel> list) {
   // Most visited location (by rounding lat/lng and grouping)
   Map<String, int> locationFrequency = {};
   for (var entry in sorted) {
-    final rounded = '${entry.latitude.toStringAsFixed(4)},${entry.longitude.toStringAsFixed(4)}';
+    final rounded =
+        '${entry.latitude.toStringAsFixed(4)},${entry.longitude.toStringAsFixed(4)}';
     locationFrequency[rounded] = (locationFrequency[rounded] ?? 0) + 1;
   }
-  final mostVisited = locationFrequency.entries.reduce((a, b) => a.value > b.value ? a : b).key;
+  final mostVisited =
+      locationFrequency.entries.reduce((a, b) => a.value > b.value ? a : b).key;
   final latLngParts = mostVisited.split(',').map(double.parse).toList();
   final mostVisitedLocation = LatLng(latLngParts[0], latLngParts[1]);
 
@@ -90,8 +92,10 @@ DeviceSummary summarizeDeviceInfoData(List<DeviceInfoModel> list) {
       LatLng(sorted[i].latitude, sorted[i].longitude),
       LatLng(sorted[i - 1].latitude, sorted[i - 1].longitude),
     );
-    if (dist < 20) { // If distance < 20 meters, consider stationary
-      final stopDuration = sorted[i].timestamp.difference(sorted[i - 1].timestamp);
+    if (dist < 20) {
+      // If distance < 20 meters, consider stationary
+      final stopDuration =
+          sorted[i].timestamp.difference(sorted[i - 1].timestamp);
       if (longestStop == null || stopDuration > longestStop) {
         longestStop = stopDuration;
       }
@@ -106,7 +110,8 @@ DeviceSummary summarizeDeviceInfoData(List<DeviceInfoModel> list) {
     final battery = info.batteryStatus.target;
     if (battery != null) {
       final level = int.tryParse(battery.level.replaceAll('%', '')) ?? 100;
-      if (minBattery == null || level < int.parse(minBattery.replaceAll('%', ''))) {
+      if (minBattery == null ||
+          level < int.parse(minBattery.replaceAll('%', ''))) {
         minBattery = battery.level;
       }
 
@@ -134,7 +139,7 @@ DeviceSummary summarizeDeviceInfoData(List<DeviceInfoModel> list) {
   }
 
   return DeviceSummary(
-    date: DateFormat('yyyy-MM-dd').format(startTime),
+    date: DateFormat('dd-MM-yyyy').format(startTime),
     totalRecords: sorted.length,
     startTime: startTime,
     endTime: endTime,

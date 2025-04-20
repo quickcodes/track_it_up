@@ -129,36 +129,38 @@ class DeviceAndLocationService {
     await Permission.locationWhenInUse.request();
   }
 
-  // String _getConnectionType(ConnectivityResult result) {
-  //   switch (result) {
-  //     case ConnectivityResult.wifi:
-  //       return 'Wi-Fi';
-  //     case ConnectivityResult.mobile:
-  //       return 'Cellular';
-  //     case ConnectivityResult.ethernet:
-  //       return 'Ethernet';
-  //     case ConnectivityResult.bluetooth:
-  //       return 'Bluetooth';
-  //     case ConnectivityResult.none:
-  //       return 'No Connection';
-  //     default:
-  //       return 'Unknown';
-  //   }
-  // }
   String _getConnectionType(ConnectivityResult result) {
-  switch (result) {
-    case ConnectivityResult.wifi:
-      return '📶 Wi-Fi';
-    case ConnectivityResult.mobile:
-      return '📱 Cellular';
-    case ConnectivityResult.ethernet:
-      return '🔌 Ethernet';
-    case ConnectivityResult.bluetooth:
-      return '🟦 Bluetooth';
-    case ConnectivityResult.none:
-      return '❌ No Internet';
-    default:
-      return '❓ Unknown';
+    switch (result) {
+      case ConnectivityResult.wifi:
+        return 'Wi-Fi';
+      case ConnectivityResult.mobile:
+        return 'Cellular';
+      case ConnectivityResult.ethernet:
+        return 'Ethernet';
+      case ConnectivityResult.bluetooth:
+        return 'Bluetooth';
+      case ConnectivityResult.none:
+        return 'No Connection';
+      default:
+        return 'Unknown';
+    }
   }
 }
-}
+
+
+  String getConnectionTypeEmojie(String result) {
+    switch (result) {
+      case 'Wi-Fi':
+        return '📶';
+      case 'Cellular':
+        return '📱';
+      case 'Ethernet':
+        return '🔌';
+      case 'Bluetooth':
+        return '🟦';
+      case 'No Internet':
+        return '❌';
+      default:
+        return '❓';
+    }
+  }
