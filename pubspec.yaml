@@ -57,6 +57,8 @@ dependencies:
   latlong2:
   url_launcher: ^6.3.1
 
+  path: any
+  path_provider: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

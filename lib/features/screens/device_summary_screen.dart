@@ -221,7 +221,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:track_it_up/features/models/device_summary_model.dart';
 import 'package:track_it_up/features/models/frequently_visited_model.dart';
 import 'package:track_it_up/features/screens/device_path_map_flutter_map.dart';

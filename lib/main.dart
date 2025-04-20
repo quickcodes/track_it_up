@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:developer';
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -11,13 +9,10 @@ import 'package:objectbox/objectbox.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'features/models/device_info_model.dart';
-import 'features/screens/device_summary_screen.dart';
 import 'features/screens/home_screen.dart';
 import 'features/services/device_info_service.dart';
 import 'features/services/local_db_service.dart';
 import 'package:intl/intl.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:geocoding/geocoding.dart';
 
 /// Provides access to the ObjectBox Store throughout the app.
 // ObjectBox? objectbox;
@@ -193,7 +188,7 @@ void onStart(ServiceInstance service) async {
 
       // address = placemarks.isNotEmpty ? placemarks.first.toString() : '';
     } catch (e) {
-      print("=====>>>>> ### *** Device Info *** ### ERROR: ${e}");
+      print("=====>>>>> ### *** Device Info *** ### ERROR: $e");
     }
 
     if (service is AndroidServiceInstance) {
@@ -226,12 +221,12 @@ void onStart(ServiceInstance service) async {
         final chargingEmoji = isCharging ? '⚡' : '🔋';
         final currentTime =
             DateFormat('HH:mm:ss').format(info?.timestamp ?? DateTime.now());
-        final speed = info?.speed?.toStringAsFixed(1) ?? '0.0';
+        final speed = info?.speed.toStringAsFixed(1) ?? '0.0';
 
         service.setForegroundNotificationInfo(
-          title: "📍 ${info?.deviceModel} (${batteryLevel}) $chargingEmoji",
+          title: "📍 ${info?.deviceModel} ($batteryLevel) $chargingEmoji",
           content:
-              "${getConnectionTypeEmojie(info?.networkInformation ?? '')}${info?.networkInformation} | 🚀 ${speed} m/s | 🕒 $currentTime",
+              "${getConnectionTypeEmojie(info?.networkInformation ?? '')}${info?.networkInformation} | 🚀 $speed m/s | 🕒 $currentTime",
         );
       }
     }

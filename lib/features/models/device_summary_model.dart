@@ -63,7 +63,7 @@ DeviceSummary summarizeDeviceInfoData(List<DeviceInfoModel> list) {
   final activeDuration = endTime.difference(startTime);
 
   // Distance calculation
-  final distance = Distance();
+  const distance = Distance();
   double totalDistance = 0.0;
   for (int i = 0; i < sorted.length - 1; i++) {
     totalDistance += distance.as(

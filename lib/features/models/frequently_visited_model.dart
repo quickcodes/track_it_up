@@ -22,7 +22,7 @@ Future<List<FrequentVisit>> getFrequentlyVisitedPlacesWithAddress(
 }) async {
   if (list.isEmpty) return [];
 
-  final distance = Distance();
+  const distance = Distance();
   final sorted = List<DeviceInfoModel>.from(list)
     ..sort((a, b) => a.timestamp.compareTo(b.timestamp));
 
@@ -77,7 +77,7 @@ Future<List<FrequentVisit>> groupNearbyLocations(
 
     // Try to find an existing group
     for (var groupedVisit in groupedVisits) {
-      final dist = Distance().as(
+      final dist = const Distance().as(
         LengthUnit.Meter,
         visit.location,
         groupedVisit.location,

@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: const Text("View Records"),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => DateEntryWrapView(),
+                  builder: (context) => const DateEntryWrapView(),
                 ));
               },
             ),
@@ -251,6 +251,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final query =
         store.box<DeviceInfoModel>().query().watch(triggerImmediately: true);
 
-    return query!.map((query) => query.find());
+    return query.map((query) => query.find());
   }
 }
