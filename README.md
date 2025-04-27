@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>track_it_up - README</title>
+  <!-- <title>track_it_up - README</title>
   <style>
     body {
       font-family: monospace;
       line-height: 1.6;
     }
-  </style>
+  </style> -->
 </head>
 <body>
 
