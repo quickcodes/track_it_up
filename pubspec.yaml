@@ -59,6 +59,11 @@ dependencies:
 
   path: any
   path_provider: any
+  flutter_bloc: ^9.1.0
+  equatable: ^2.0.7
+  get_it: ^8.0.3
+  dartz: ^0.10.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,6 +87,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - shorebird.yaml
 
   # To add assets to your application, add an assets section, like this:
   # assets:

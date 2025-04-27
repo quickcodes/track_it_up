@@ -2,35 +2,19 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:objectbox/objectbox.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'features/models/device_info_model.dart';
-import 'features/screens/home_screen.dart';
-import 'features/services/device_info_service.dart';
-import 'features/services/local_db_service.dart';
 import 'package:intl/intl.dart';
+import 'package:track_it_up/config/theme_data.dart';
+import 'package:track_it_up/dependency_injection.dart';
+import 'package:track_it_up/features/tracking/data/models/device_info_model.dart';
+import 'package:track_it_up/features/tracking/presentation/bloc/tracking_bloc.dart';
 
-/// Provides access to the ObjectBox Store throughout the app.
-// ObjectBox? objectbox;
-final Completer<Store> _storeCompleter = Completer<Store>();
-
-Future<void> initStore() async {
-  if (!_storeCompleter.isCompleted) {
-    final store = await ObjectBox.create();
-    _storeCompleter.complete(store.store);
-  }
-}
-
-Future<Store> getStore() async {
-  if (!_storeCompleter.isCompleted) {
-    await initStore(); // Lazy init
-  }
-  return _storeCompleter.future;
-}
+import 'features/tracking/presentation/screens/home_screen.dart';
+import 'core/services/device_info_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +22,8 @@ Future<void> main() async {
   // objectbox = await ObjectBox.create();
 
   // initialize store
-  await initStore();
+  await initGetIt();
+  // await initStore();
   await initializeService();
   runApp(const MyApp());
 }
@@ -106,13 +91,13 @@ Future<void> initializeService() async {
 @pragma('vm:entry-point')
 Future<bool> onIosBackground(ServiceInstance service) async {
   WidgetsFlutterBinding.ensureInitialized();
-  DartPluginRegistrant.ensureInitialized();
+  if (kReleaseMode) DartPluginRegistrant.ensureInitialized();
 
-  SharedPreferences preferences = await SharedPreferences.getInstance();
-  await preferences.reload();
-  final log = preferences.getStringList('log') ?? <String>[];
-  log.add(DateTime.now().toIso8601String());
-  await preferences.setStringList('log', log);
+  // SharedPreferences preferences = await SharedPreferences.getInstance();
+  // await preferences.reload();
+  // final log = preferences.getStringList('log') ?? <String>[];
+  // log.add(DateTime.now().toIso8601String());
+  // await preferences.setStringList('log', log);
 
   // DeviceAndLocationService infoService = DeviceAndLocationService();
   // final objectBoxInstance = objectbox.store.box<DeviceInfoModel>();
@@ -166,7 +151,7 @@ void onStart(ServiceInstance service) async {
   // bring to foreground
   Timer.periodic(const Duration(seconds: 30), (timer) async {
     DeviceInfoModel? info;
-    String address = '';
+    // String address = '';
     try {
       // objectbox ??= await ObjectBox.create();
 
@@ -174,9 +159,9 @@ void onStart(ServiceInstance service) async {
       final store = await getStore();
       info = await infoService.collectDeviceAndLocationInfo();
       store.box<DeviceInfoModel>().put(info);
-      print("=====>>>>> ### *** Device Info *** ### ${info.toString()}");
+      debugPrint("=====>>>>> ### *** Device Info *** ### ${info.toString()}");
       final todaysInfo = store.box<DeviceInfoModel>().getAll();
-      print("=====>>>>> ### *** Todays Info *** ### ${todaysInfo.length}");
+      debugPrint("=====>>>>> ### *** Todays Info *** ### ${todaysInfo.length}");
 
       // List<Placemark> placemarks = [];
       // try {
@@ -188,7 +173,7 @@ void onStart(ServiceInstance service) async {
 
       // address = placemarks.isNotEmpty ? placemarks.first.toString() : '';
     } catch (e) {
-      print("=====>>>>> ### *** Device Info *** ### ERROR: $e");
+      debugPrint("=====>>>>> ### *** Device Info *** ### ERROR: $e");
     }
 
     if (service is AndroidServiceInstance) {
@@ -237,7 +222,7 @@ void onStart(ServiceInstance service) async {
     // test using external plugin
     // final deviceInfo = DeviceInfoPlugin();
     // String? device;
-    // if (Platform.isAndroid) {
+    // if (Platform.isAndroid) {1
     //   final androidInfo = await deviceInfo.androidInfo;
     //   device = androidInfo.model;
     // } else if (Platform.isIOS) {
@@ -274,22 +259,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        scaffoldBackgroundColor: Colors.grey[100],
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
-            foregroundColor: Colors.white,
-            minimumSize: const Size.fromHeight(50),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-        ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => getIt<TrackingBloc>()),
+        // BlocProvider(create: (_) => getIt<ProductBloc>()),
+      ],
+      child: MaterialApp(
+        theme: appTheme,
+        home: const HomeScreen(),
       ),
-      home: const HomeScreen(),
     );
   }
 }

@@ -4,137 +4,137 @@
   "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
   "entities": [
     {
-      "id": "1:7405432209100331161",
-      "lastPropertyId": "16:1628521069859539822",
-      "name": "DeviceInfoModel",
+      "id": "1:6575810847932051434",
+      "lastPropertyId": "5:6456125447013599938",
+      "name": "BatteryStatusModel",
       "properties": [
         {
-          "id": "1:2937987091944070867",
+          "id": "1:3184119626271728262",
           "name": "id",
           "type": 6,
           "flags": 1
         },
         {
-          "id": "2:4617101121302732517",
-          "name": "deviceModel",
+          "id": "2:7320898788225371411",
+          "name": "level",
           "type": 9
         },
         {
-          "id": "3:4123934912594529385",
-          "name": "osVersion",
+          "id": "3:622180312178789599",
+          "name": "charging",
+          "type": 1
+        },
+        {
+          "id": "4:5580190595671806136",
+          "name": "status",
           "type": 9
         },
         {
-          "id": "4:2042328671769262496",
-          "name": "screenResolution",
-          "type": 9
-        },
-        {
-          "id": "5:7756375455551323768",
-          "name": "deviceUniqueID",
-          "type": 9
-        },
-        {
-          "id": "6:2651978488199996296",
-          "name": "networkInformation",
-          "type": 9
-        },
-        {
-          "id": "7:3879829215634602046",
-          "name": "latitude",
-          "type": 8
-        },
-        {
-          "id": "8:7643953303481611759",
-          "name": "longitude",
-          "type": 8
-        },
-        {
-          "id": "9:3124184973510733336",
-          "name": "accuracy",
-          "type": 8
-        },
-        {
-          "id": "10:2696177606151369871",
-          "name": "altitude",
-          "type": 8
-        },
-        {
-          "id": "11:1073001613958236239",
-          "name": "heading",
-          "type": 8
-        },
-        {
-          "id": "12:1793393992961518438",
-          "name": "speed",
-          "type": 8
-        },
-        {
-          "id": "13:7833191649478770921",
-          "name": "speedAccuracy",
-          "type": 8
-        },
-        {
-          "id": "14:81972814067184499",
-          "name": "timestamp",
-          "type": 10
-        },
-        {
-          "id": "15:944481315807892606",
-          "name": "nearbyBluetoothDevices",
-          "type": 30
-        },
-        {
-          "id": "16:1628521069859539822",
-          "name": "batteryStatusId",
+          "id": "5:6456125447013599938",
+          "name": "deviceInfoId",
           "type": 11,
           "flags": 520,
-          "indexId": "2:7558304616306338887",
-          "relationTarget": "BatteryStatus"
+          "indexId": "1:444710295680164493",
+          "relationTarget": "DeviceInfoModel"
         }
       ],
       "relations": []
     },
     {
-      "id": "2:579432278127944658",
-      "lastPropertyId": "5:6208621102409630817",
-      "name": "BatteryStatus",
+      "id": "2:8282122270348835851",
+      "lastPropertyId": "16:7962844570661211915",
+      "name": "DeviceInfoModel",
       "properties": [
         {
-          "id": "1:3209298041598458238",
+          "id": "1:4244403632384284486",
           "name": "id",
           "type": 6,
           "flags": 1
         },
         {
-          "id": "2:5284210674761437261",
-          "name": "level",
+          "id": "2:118283774850538939",
+          "name": "deviceModel",
           "type": 9
         },
         {
-          "id": "3:3086738372400523933",
-          "name": "charging",
-          "type": 1
-        },
-        {
-          "id": "4:8895713014642087315",
-          "name": "status",
+          "id": "3:19782384035651792",
+          "name": "osVersion",
           "type": 9
         },
         {
-          "id": "5:6208621102409630817",
-          "name": "deviceInfoId",
+          "id": "4:4965227215453164512",
+          "name": "screenResolution",
+          "type": 9
+        },
+        {
+          "id": "5:2086815102931070162",
+          "name": "deviceUniqueID",
+          "type": 9
+        },
+        {
+          "id": "6:6811114128518432914",
+          "name": "batteryStatusId",
           "type": 11,
           "flags": 520,
-          "indexId": "1:3694763940197744858",
-          "relationTarget": "DeviceInfoModel"
+          "indexId": "2:3306080761711921613",
+          "relationTarget": "BatteryStatusModel"
+        },
+        {
+          "id": "7:4756990732018712316",
+          "name": "networkInformation",
+          "type": 9
+        },
+        {
+          "id": "8:855914071425509221",
+          "name": "latitude",
+          "type": 8
+        },
+        {
+          "id": "9:499799690017468040",
+          "name": "longitude",
+          "type": 8
+        },
+        {
+          "id": "10:1412365797318320226",
+          "name": "accuracy",
+          "type": 8
+        },
+        {
+          "id": "11:2859797024750703747",
+          "name": "altitude",
+          "type": 8
+        },
+        {
+          "id": "12:7656153299138016908",
+          "name": "heading",
+          "type": 8
+        },
+        {
+          "id": "13:1700959152187223790",
+          "name": "speed",
+          "type": 8
+        },
+        {
+          "id": "14:6828139911181447107",
+          "name": "speedAccuracy",
+          "type": 8
+        },
+        {
+          "id": "15:7530108220449479169",
+          "name": "timestamp",
+          "type": 10
+        },
+        {
+          "id": "16:7962844570661211915",
+          "name": "nearbyBluetoothDevices",
+          "type": 30
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "2:579432278127944658",
-  "lastIndexId": "2:7558304616306338887",
+  "lastEntityId": "2:8282122270348835851",
+  "lastIndexId": "2:3306080761711921613",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,

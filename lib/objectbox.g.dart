@@ -14,135 +14,136 @@ import 'package:objectbox/internal.dart'
 import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
-import 'features/models/device_info_model.dart';
+import 'features/tracking/data/models/battery_status_model.dart';
+import 'features/tracking/data/models/device_info_model.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
 
 final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(1, 7405432209100331161),
-      name: 'DeviceInfoModel',
-      lastPropertyId: const obx_int.IdUid(16, 1628521069859539822),
+      id: const obx_int.IdUid(1, 6575810847932051434),
+      name: 'BatteryStatusModel',
+      lastPropertyId: const obx_int.IdUid(5, 6456125447013599938),
       flags: 0,
       properties: <obx_int.ModelProperty>[
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 2937987091944070867),
+            id: const obx_int.IdUid(1, 3184119626271728262),
             name: 'id',
             type: 6,
             flags: 1),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 4617101121302732517),
-            name: 'deviceModel',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 4123934912594529385),
-            name: 'osVersion',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 2042328671769262496),
-            name: 'screenResolution',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 7756375455551323768),
-            name: 'deviceUniqueID',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 2651978488199996296),
-            name: 'networkInformation',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(7, 3879829215634602046),
-            name: 'latitude',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(8, 7643953303481611759),
-            name: 'longitude',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(9, 3124184973510733336),
-            name: 'accuracy',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(10, 2696177606151369871),
-            name: 'altitude',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(11, 1073001613958236239),
-            name: 'heading',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(12, 1793393992961518438),
-            name: 'speed',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(13, 7833191649478770921),
-            name: 'speedAccuracy',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(14, 81972814067184499),
-            name: 'timestamp',
-            type: 10,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(15, 944481315807892606),
-            name: 'nearbyBluetoothDevices',
-            type: 30,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(16, 1628521069859539822),
-            name: 'batteryStatusId',
-            type: 11,
-            flags: 520,
-            indexId: const obx_int.IdUid(2, 7558304616306338887),
-            relationTarget: 'BatteryStatus')
-      ],
-      relations: <obx_int.ModelRelation>[],
-      backlinks: <obx_int.ModelBacklink>[]),
-  obx_int.ModelEntity(
-      id: const obx_int.IdUid(2, 579432278127944658),
-      name: 'BatteryStatus',
-      lastPropertyId: const obx_int.IdUid(5, 6208621102409630817),
-      flags: 0,
-      properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 3209298041598458238),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 5284210674761437261),
+            id: const obx_int.IdUid(2, 7320898788225371411),
             name: 'level',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 3086738372400523933),
+            id: const obx_int.IdUid(3, 622180312178789599),
             name: 'charging',
             type: 1,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 8895713014642087315),
+            id: const obx_int.IdUid(4, 5580190595671806136),
             name: 'status',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 6208621102409630817),
+            id: const obx_int.IdUid(5, 6456125447013599938),
             name: 'deviceInfoId',
             type: 11,
             flags: 520,
-            indexId: const obx_int.IdUid(1, 3694763940197744858),
+            indexId: const obx_int.IdUid(1, 444710295680164493),
             relationTarget: 'DeviceInfoModel')
+      ],
+      relations: <obx_int.ModelRelation>[],
+      backlinks: <obx_int.ModelBacklink>[]),
+  obx_int.ModelEntity(
+      id: const obx_int.IdUid(2, 8282122270348835851),
+      name: 'DeviceInfoModel',
+      lastPropertyId: const obx_int.IdUid(16, 7962844570661211915),
+      flags: 0,
+      properties: <obx_int.ModelProperty>[
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(1, 4244403632384284486),
+            name: 'id',
+            type: 6,
+            flags: 1),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(2, 118283774850538939),
+            name: 'deviceModel',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(3, 19782384035651792),
+            name: 'osVersion',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(4, 4965227215453164512),
+            name: 'screenResolution',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(5, 2086815102931070162),
+            name: 'deviceUniqueID',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(6, 6811114128518432914),
+            name: 'batteryStatusId',
+            type: 11,
+            flags: 520,
+            indexId: const obx_int.IdUid(2, 3306080761711921613),
+            relationTarget: 'BatteryStatusModel'),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(7, 4756990732018712316),
+            name: 'networkInformation',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(8, 855914071425509221),
+            name: 'latitude',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(9, 499799690017468040),
+            name: 'longitude',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(10, 1412365797318320226),
+            name: 'accuracy',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(11, 2859797024750703747),
+            name: 'altitude',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(12, 7656153299138016908),
+            name: 'heading',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(13, 1700959152187223790),
+            name: 'speed',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(14, 6828139911181447107),
+            name: 'speedAccuracy',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(15, 7530108220449479169),
+            name: 'timestamp',
+            type: 10,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(16, 7962844570661211915),
+            name: 'nearbyBluetoothDevices',
+            type: 30,
+            flags: 0)
       ],
       relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[])
@@ -183,8 +184,8 @@ Future<obx.Store> openStore(
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
       entities: _entities,
-      lastEntityId: const obx_int.IdUid(2, 579432278127944658),
-      lastIndexId: const obx_int.IdUid(2, 7558304616306338887),
+      lastEntityId: const obx_int.IdUid(2, 8282122270348835851),
+      lastIndexId: const obx_int.IdUid(2, 3306080761711921613),
       lastRelationId: const obx_int.IdUid(0, 0),
       lastSequenceId: const obx_int.IdUid(0, 0),
       retiredEntityUids: const [],
@@ -196,8 +197,45 @@ obx_int.ModelDefinition getObjectBoxModel() {
       version: 1);
 
   final bindings = <Type, obx_int.EntityDefinition>{
-    DeviceInfoModel: obx_int.EntityDefinition<DeviceInfoModel>(
+    BatteryStatusModel: obx_int.EntityDefinition<BatteryStatusModel>(
         model: _entities[0],
+        toOneRelations: (BatteryStatusModel object) => [object.deviceInfo],
+        toManyRelations: (BatteryStatusModel object) => {},
+        getId: (BatteryStatusModel object) => object.id,
+        setId: (BatteryStatusModel object, int id) {
+          object.id = id;
+        },
+        objectToFB: (BatteryStatusModel object, fb.Builder fbb) {
+          final levelOffset = fbb.writeString(object.level);
+          final statusOffset = fbb.writeString(object.status);
+          fbb.startTable(6);
+          fbb.addInt64(0, object.id);
+          fbb.addOffset(1, levelOffset);
+          fbb.addBool(2, object.charging);
+          fbb.addOffset(3, statusOffset);
+          fbb.addInt64(4, object.deviceInfo.targetId);
+          fbb.finish(fbb.endTable());
+          return object.id;
+        },
+        objectFromFB: (obx.Store store, ByteData fbData) {
+          final buffer = fb.BufferContext(fbData);
+          final rootOffset = buffer.derefObject(0);
+          final levelParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 6, '');
+          final chargingParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 8, false);
+          final statusParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 10, '');
+          final object = BatteryStatusModel(
+              level: levelParam, charging: chargingParam, status: statusParam)
+            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          object.deviceInfo.targetId =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 12, 0);
+          object.deviceInfo.attach(store);
+          return object;
+        }),
+    DeviceInfoModel: obx_int.EntityDefinition<DeviceInfoModel>(
+        model: _entities[1],
         toOneRelations: (DeviceInfoModel object) => [object.batteryStatus],
         toManyRelations: (DeviceInfoModel object) => {},
         getId: (DeviceInfoModel object) => object.id,
@@ -222,17 +260,17 @@ obx_int.ModelDefinition getObjectBoxModel() {
           fbb.addOffset(2, osVersionOffset);
           fbb.addOffset(3, screenResolutionOffset);
           fbb.addOffset(4, deviceUniqueIDOffset);
-          fbb.addOffset(5, networkInformationOffset);
-          fbb.addFloat64(6, object.latitude);
-          fbb.addFloat64(7, object.longitude);
-          fbb.addFloat64(8, object.accuracy);
-          fbb.addFloat64(9, object.altitude);
-          fbb.addFloat64(10, object.heading);
-          fbb.addFloat64(11, object.speed);
-          fbb.addFloat64(12, object.speedAccuracy);
-          fbb.addInt64(13, object.timestamp.millisecondsSinceEpoch);
-          fbb.addOffset(14, nearbyBluetoothDevicesOffset);
-          fbb.addInt64(15, object.batteryStatus.targetId);
+          fbb.addInt64(5, object.batteryStatus.targetId);
+          fbb.addOffset(6, networkInformationOffset);
+          fbb.addFloat64(7, object.latitude);
+          fbb.addFloat64(8, object.longitude);
+          fbb.addFloat64(9, object.accuracy);
+          fbb.addFloat64(10, object.altitude);
+          fbb.addFloat64(11, object.heading);
+          fbb.addFloat64(12, object.speed);
+          fbb.addFloat64(13, object.speedAccuracy);
+          fbb.addInt64(14, object.timestamp.millisecondsSinceEpoch);
+          fbb.addOffset(15, nearbyBluetoothDevicesOffset);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -252,27 +290,27 @@ obx_int.ModelDefinition getObjectBoxModel() {
                   .vTableGet(buffer, rootOffset, 12, '');
           final networkInformationParam =
               const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 14, '');
+                  .vTableGet(buffer, rootOffset, 16, '');
           final latitudeParam =
-              const fb.Float64Reader().vTableGet(buffer, rootOffset, 16, 0);
-          final longitudeParam =
               const fb.Float64Reader().vTableGet(buffer, rootOffset, 18, 0);
-          final accuracyParam =
+          final longitudeParam =
               const fb.Float64Reader().vTableGet(buffer, rootOffset, 20, 0);
-          final altitudeParam =
+          final accuracyParam =
               const fb.Float64Reader().vTableGet(buffer, rootOffset, 22, 0);
-          final headingParam =
+          final altitudeParam =
               const fb.Float64Reader().vTableGet(buffer, rootOffset, 24, 0);
-          final speedParam =
+          final headingParam =
               const fb.Float64Reader().vTableGet(buffer, rootOffset, 26, 0);
-          final speedAccuracyParam =
+          final speedParam =
               const fb.Float64Reader().vTableGet(buffer, rootOffset, 28, 0);
+          final speedAccuracyParam =
+              const fb.Float64Reader().vTableGet(buffer, rootOffset, 30, 0);
           final timestampParam = DateTime.fromMillisecondsSinceEpoch(
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 30, 0));
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 32, 0));
           final nearbyBluetoothDevicesParam = const fb.ListReader<String>(
                   fb.StringReader(asciiOptimization: true),
                   lazy: false)
-              .vTableGet(buffer, rootOffset, 32, []);
+              .vTableGet(buffer, rootOffset, 34, []);
           final object = DeviceInfoModel(
               deviceModel: deviceModelParam,
               osVersion: osVersionParam,
@@ -290,45 +328,8 @@ obx_int.ModelDefinition getObjectBoxModel() {
               nearbyBluetoothDevices: nearbyBluetoothDevicesParam)
             ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
           object.batteryStatus.targetId =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 34, 0);
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 14, 0);
           object.batteryStatus.attach(store);
-          return object;
-        }),
-    BatteryStatus: obx_int.EntityDefinition<BatteryStatus>(
-        model: _entities[1],
-        toOneRelations: (BatteryStatus object) => [object.deviceInfo],
-        toManyRelations: (BatteryStatus object) => {},
-        getId: (BatteryStatus object) => object.id,
-        setId: (BatteryStatus object, int id) {
-          object.id = id;
-        },
-        objectToFB: (BatteryStatus object, fb.Builder fbb) {
-          final levelOffset = fbb.writeString(object.level);
-          final statusOffset = fbb.writeString(object.status);
-          fbb.startTable(6);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, levelOffset);
-          fbb.addBool(2, object.charging);
-          fbb.addOffset(3, statusOffset);
-          fbb.addInt64(4, object.deviceInfo.targetId);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (obx.Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final levelParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final chargingParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 8, false);
-          final statusParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 10, '');
-          final object = BatteryStatus(
-              level: levelParam, charging: chargingParam, status: statusParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          object.deviceInfo.targetId =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 12, 0);
-          object.deviceInfo.attach(store);
           return object;
         })
   };
@@ -336,95 +337,95 @@ obx_int.ModelDefinition getObjectBoxModel() {
   return obx_int.ModelDefinition(model, bindings);
 }
 
+/// [BatteryStatusModel] entity fields to define ObjectBox queries.
+class BatteryStatusModel_ {
+  /// See [BatteryStatusModel.id].
+  static final id =
+      obx.QueryIntegerProperty<BatteryStatusModel>(_entities[0].properties[0]);
+
+  /// See [BatteryStatusModel.level].
+  static final level =
+      obx.QueryStringProperty<BatteryStatusModel>(_entities[0].properties[1]);
+
+  /// See [BatteryStatusModel.charging].
+  static final charging =
+      obx.QueryBooleanProperty<BatteryStatusModel>(_entities[0].properties[2]);
+
+  /// See [BatteryStatusModel.status].
+  static final status =
+      obx.QueryStringProperty<BatteryStatusModel>(_entities[0].properties[3]);
+
+  /// See [BatteryStatusModel.deviceInfo].
+  static final deviceInfo =
+      obx.QueryRelationToOne<BatteryStatusModel, DeviceInfoModel>(
+          _entities[0].properties[4]);
+}
+
 /// [DeviceInfoModel] entity fields to define ObjectBox queries.
 class DeviceInfoModel_ {
   /// See [DeviceInfoModel.id].
   static final id =
-      obx.QueryIntegerProperty<DeviceInfoModel>(_entities[0].properties[0]);
+      obx.QueryIntegerProperty<DeviceInfoModel>(_entities[1].properties[0]);
 
   /// See [DeviceInfoModel.deviceModel].
   static final deviceModel =
-      obx.QueryStringProperty<DeviceInfoModel>(_entities[0].properties[1]);
+      obx.QueryStringProperty<DeviceInfoModel>(_entities[1].properties[1]);
 
   /// See [DeviceInfoModel.osVersion].
   static final osVersion =
-      obx.QueryStringProperty<DeviceInfoModel>(_entities[0].properties[2]);
+      obx.QueryStringProperty<DeviceInfoModel>(_entities[1].properties[2]);
 
   /// See [DeviceInfoModel.screenResolution].
   static final screenResolution =
-      obx.QueryStringProperty<DeviceInfoModel>(_entities[0].properties[3]);
+      obx.QueryStringProperty<DeviceInfoModel>(_entities[1].properties[3]);
 
   /// See [DeviceInfoModel.deviceUniqueID].
   static final deviceUniqueID =
-      obx.QueryStringProperty<DeviceInfoModel>(_entities[0].properties[4]);
+      obx.QueryStringProperty<DeviceInfoModel>(_entities[1].properties[4]);
+
+  /// See [DeviceInfoModel.batteryStatus].
+  static final batteryStatus =
+      obx.QueryRelationToOne<DeviceInfoModel, BatteryStatusModel>(
+          _entities[1].properties[5]);
 
   /// See [DeviceInfoModel.networkInformation].
   static final networkInformation =
-      obx.QueryStringProperty<DeviceInfoModel>(_entities[0].properties[5]);
+      obx.QueryStringProperty<DeviceInfoModel>(_entities[1].properties[6]);
 
   /// See [DeviceInfoModel.latitude].
   static final latitude =
-      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[0].properties[6]);
+      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[1].properties[7]);
 
   /// See [DeviceInfoModel.longitude].
   static final longitude =
-      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[0].properties[7]);
+      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[1].properties[8]);
 
   /// See [DeviceInfoModel.accuracy].
   static final accuracy =
-      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[0].properties[8]);
+      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[1].properties[9]);
 
   /// See [DeviceInfoModel.altitude].
   static final altitude =
-      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[0].properties[9]);
+      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[1].properties[10]);
 
   /// See [DeviceInfoModel.heading].
   static final heading =
-      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[0].properties[10]);
+      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[1].properties[11]);
 
   /// See [DeviceInfoModel.speed].
   static final speed =
-      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[0].properties[11]);
+      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[1].properties[12]);
 
   /// See [DeviceInfoModel.speedAccuracy].
   static final speedAccuracy =
-      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[0].properties[12]);
+      obx.QueryDoubleProperty<DeviceInfoModel>(_entities[1].properties[13]);
 
   /// See [DeviceInfoModel.timestamp].
   static final timestamp =
-      obx.QueryDateProperty<DeviceInfoModel>(_entities[0].properties[13]);
+      obx.QueryDateProperty<DeviceInfoModel>(_entities[1].properties[14]);
 
   /// See [DeviceInfoModel.nearbyBluetoothDevices].
   static final nearbyBluetoothDevices =
       obx.QueryStringVectorProperty<DeviceInfoModel>(
-          _entities[0].properties[14]);
-
-  /// See [DeviceInfoModel.batteryStatus].
-  static final batteryStatus =
-      obx.QueryRelationToOne<DeviceInfoModel, BatteryStatus>(
-          _entities[0].properties[15]);
-}
-
-/// [BatteryStatus] entity fields to define ObjectBox queries.
-class BatteryStatus_ {
-  /// See [BatteryStatus.id].
-  static final id =
-      obx.QueryIntegerProperty<BatteryStatus>(_entities[1].properties[0]);
-
-  /// See [BatteryStatus.level].
-  static final level =
-      obx.QueryStringProperty<BatteryStatus>(_entities[1].properties[1]);
-
-  /// See [BatteryStatus.charging].
-  static final charging =
-      obx.QueryBooleanProperty<BatteryStatus>(_entities[1].properties[2]);
-
-  /// See [BatteryStatus.status].
-  static final status =
-      obx.QueryStringProperty<BatteryStatus>(_entities[1].properties[3]);
-
-  /// See [BatteryStatus.deviceInfo].
-  static final deviceInfo =
-      obx.QueryRelationToOne<BatteryStatus, DeviceInfoModel>(
-          _entities[1].properties[4]);
+          _entities[1].properties[15]);
 }
